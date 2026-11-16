@@ -1,0 +1,22 @@
+FILA ZERO - PAGAMENTO SIMULADO
+
+O Pix e o cartão são demonstrações: não geram cobrança, QR Code válido ou transferência.
+Não informe dados reais de cartão ou banco.
+
+Como executar:
+1. Extraia a pasta do ZIP.
+2. Abra o terminal na pasta que contém package.json.
+3. Execute: npm.cmd install
+4. Execute: npm.cmd start
+5. Acesse: http://localhost:3000
+
+Como testar:
+- Entre com uma conta de aluno.
+- Adicione produtos ao carrinho e abra a página do pedido.
+- Escolha Pix ou Cartão e confirme o pedido.
+- Na tela seguinte, clique em "Confirmar pagamento simulado".
+- O pedido deve aparecer como Pago e ser enviado à cantina.
+- Para "Pagar na retirada", a cantina confirma o recebimento pelo painel.
+
+O servidor confere os preços no SQLite e só permite ao aluno confirmar o pagamento
+simulado de um pedido que pertence à própria conta.

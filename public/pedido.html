@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FilaZero - Meu pedido</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="topo">
+
+    <div class="logo">
+        🍴 FilaZero
+    </div>
+
+
+    <div class="usuario">
+
+        <a href="cardapio.html">
+            Cardápio
+        </a>
+
+        <a href="meus-pedidos.html">
+            Meus pedidos
+        </a>
+
+        <a href="/logout">
+            Sair
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main class="pagina pedido-pagina">
+
+
+    <section class="boas-vindas">
+
+        <h1>
+            Seu pedido 🛒
+        </h1>
+
+        <p>
+            Confira os produtos antes de confirmar.
+        </p>
+
+    </section>
+
+
+
+    <section class="pedido-container">
+
+
+        <div>
+
+            <h2>
+                Produtos
+            </h2>
+
+
+            <div id="listaPedido">
+
+                Carregando...
+
+            </div>
+
+        </div>
+
+
+
+        <div class="resumo-pedido">
+
+
+            <h2>
+                Resumo
+            </h2>
+
+
+            <div class="linha">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="total">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <label>Forma de pagamento</label>
+            <div class="formas-pagamento" role="radiogroup" aria-label="Forma de pagamento">
+                <label class="opcao-pagamento"><input type="radio" name="formaPagamento" value="pix" checked> <span>🔑 Pix</span></label>
+                <label class="opcao-pagamento"><input type="radio" name="formaPagamento" value="cartao"> <span>💳 Cartão</span></label>
+                <label class="opcao-pagamento"><input type="radio" name="formaPagamento" value="retirada"> <span>💵 Pagar na retirada</span></label>
+            </div>
+            <p id="dadosPix" class="texto-privacidade">O Pix será apenas demonstrativo. Nenhuma cobrança ou transferência real será feita.</p>
+            <p id="avisoCartao" class="texto-privacidade" hidden>O cartão será demonstrativo. Não informe dados de cartão; nenhuma cobrança real será feita.</p>
+            <p id="avisoRetirada" class="texto-privacidade" hidden>Seu pedido será enviado à cantina. O pagamento será feito no balcão, no momento da retirada.</p>
+
+            <label for="horario">
+
+                Horário para retirada
+
+            </label>
+
+
+            <select id="horario">
+
+                <option value="">
+                    Selecione um horário
+                </option>
+
+                <option value="10:00">
+                    10:00
+                </option>
+
+                <option value="10:30">
+                    10:30
+                </option>
+
+                <option value="11:00">
+                    11:00
+                </option>
+
+                <option value="11:30">
+                    11:30
+                </option>
+
+                <option value="12:00">
+                    12:00
+                </option>
+
+                <option value="12:30">
+                    12:30
+                </option>
+
+                <option value="13:00">
+                    13:00
+                </option>
+
+                <option value="13:30">
+                    13:30
+                </option>
+
+            </select>
+
+
+            <button
+                id="confirmar"
+                onclick="confirmarPedido()"
+            >
+
+                Confirmar pedido
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+    <section id="pedidoCriado" class="pix-container" hidden><div class="pix-conteudo"><h2>Pedido recebido! 💚</h2><p id="pedidoCriadoTexto">Seu pedido foi enviado à cantina.</p><a href="meus-pedidos.html">Acompanhar meus pedidos</a></div></section>
+
+    <section id="pagamentoSimulado" class="pix-container" hidden>
+        <div class="pix-conteudo">
+            <h2 id="tituloPagamento">Pagamento demonstrativo</h2>
+            <p>Esta é uma simulação acadêmica do FilaZero. Nenhum dinheiro será movimentado.</p>
+            <div class="pix-status" id="resumoPagamento"></div>
+            <p id="instrucoesPagamento">Clique no botão abaixo para simular a aprovação do pagamento.</p>
+            <button type="button" id="confirmarPagamentoSimulado">Confirmar pagamento simulado</button>
+            <div id="statusPagamentoSimulado" class="pix-status" aria-live="polite">Aguardando confirmação...</div>
+            <a id="irPedidos" href="meus-pedidos.html" hidden>Ver meus pedidos</a>
+        </div>
+    </section>
+
+</main>
+
+
+<script src="js/pedido.js"></script>
+
+
+</body>
+
+</html>
